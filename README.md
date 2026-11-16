@@ -1,8 +1,8 @@
-# Web Development Final Project - *Name of App Here*
+# Web Development Final Project - *HobbyHub*
 
-Submitted by: **Your Name Here**
+Submitted by: **Gabriel Christian**
 
-This web app: **insert description**
+This web app: **is a community forum for sharing hobby projects. Users can create posts with a title, optional text and an optional image URL, browse a feed sorted by newest or most upvoted, search posts by title, and open each post to upvote it, comment on it, edit it or delete it. Data is stored in Supabase.**
 
 Time spent: **X** hours spent in total
 
@@ -10,24 +10,24 @@ Time spent: **X** hours spent in total
 
 The following **required** functionality is completed:
 
-- [ ] **Web app includes a create form that allows the user to create posts**
+- [x] **Web app includes a create form that allows the user to create posts**
   - Form requires users to add a post title
   - Forms should have the *option* for users to add:
     - additional textual content
     - an image added as an external image URL
-- [ ] **Web app includes a home feed displaying previously created posts**
+- [x] **Web app includes a home feed displaying previously created posts**
   - Web app must include home feed displaying previously created posts
   - By default, each post on the posts feed should show only the post's:
     - creation time
     - title
     - upvotes count
   - Clicking on a post should direct the user to a new page for the selected post
-- [ ] **Users can view posts in different ways**
+- [x] **Users can view posts in different ways**
   - Users can sort posts by either:
     - creation time
     - upvotes count
   - Users can search for posts by title
-- [ ] **Users can interact with each post in different ways**
+- [x] **Users can interact with each post in different ways**
   - The app includes a separate post page for each created post when clicked, where any additional information is shown, including:
     - content
     - image
@@ -36,7 +36,7 @@ The following **required** functionality is completed:
   - Each post includes an upvote button on the post page.
     - Each click increases the post's upvotes count by one
     - Users can upvote any post any number of times
-- [ ] **A post that a user previously created can be edited or deleted from its post pages**
+- [x] **A post that a user previously created can be edited or deleted from its post pages**
   - After a user creates a new post, they can go back and edit the post
   - A previously created post can be deleted from its post page
 
@@ -60,7 +60,10 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you added to improve the site's functionality!
+* [x] Live image preview on the create and edit form when an image URL is entered
+* [x] Search box in the header filters the feed as you type, and the search is kept in the URL (`/?q=...`) so it can be shared or bookmarked
+* [x] Relative timestamps ("2 hours ago") on posts and comments, with an "edited" marker on posts that were changed
+* [x] Delete asks for confirmation first
 
 ## Video Walkthrough
 
@@ -78,6 +81,17 @@ GIF created with ...
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+### Running locally
+
+1. `npm install`
+2. Create a `.env` file with `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` from your Supabase project.
+3. `npm run dev`
+
+The app expects two Supabase tables:
+
+- `posts`: `id`, `title`, `content`, `image_url`, `upvotes` (integer, default 0), `author_id`, `created_at`, `updated_at`
+- `comments`: `id`, `post_id` (references `posts.id`, on delete cascade), `content`, `author_id`, `created_at`, `updated_at`
 
 ## License
 

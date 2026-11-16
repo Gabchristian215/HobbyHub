@@ -1,0 +1,263 @@
+main {
+  flex: 1;
+  padding: 0 28px 48px;
+  text-align: left;
+}
+
+.page__title {
+  font-size: 40px;
+  margin: 28px 0 20px;
+}
+
+.page--narrow {
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+.muted {
+  color: var(--text);
+}
+
+.small {
+  font-size: 14px;
+}
+
+.error {
+  color: #d93025;
+  margin: 12px 0;
+}
+
+.required {
+  color: var(--accent);
+}
+
+/* Buttons */
+.button,
+.chip {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+}
+
+.button {
+  background: var(--accent);
+  color: #fff;
+  display: inline-block;
+  padding: 9px 18px;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.button--secondary {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+  color: var(--text-h);
+}
+
+.button--danger {
+  background: transparent;
+  border-color: #d93025;
+  color: #d93025;
+}
+
+.chip {
+  background: transparent;
+  border-color: var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 15px;
+  padding: 5px 14px;
+}
+
+.chip--active {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+  color: var(--text-h);
+}
+
+/* Feed */
+.feed-toolbar {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  justify-content: space-between;
+}
+
+.sort-buttons {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.post-list {
+  display: grid;
+  gap: 14px;
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+.post-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  display: grid;
+  gap: 6px;
+  padding: 18px 22px;
+  text-decoration: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.post-card:hover {
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow);
+}
+
+.post-card__title {
+  margin: 0;
+}
+
+.empty {
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  display: grid;
+  gap: 16px;
+  justify-items: center;
+  margin-top: 16px;
+  padding: 40px;
+}
+
+/* Form */
+.post-form {
+  display: grid;
+  gap: 18px;
+}
+
+.post-form label {
+  color: var(--text-h);
+  display: grid;
+  gap: 6px;
+}
+
+.post-form input,
+.post-form textarea,
+.comment-form input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: var(--text-h);
+  font: inherit;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+.post-form textarea {
+  resize: vertical;
+}
+
+.post-form input:focus,
+.post-form textarea:focus,
+.comment-form input:focus {
+  border-color: var(--accent);
+  outline: 2px solid var(--accent-border);
+  outline-offset: 1px;
+}
+
+.post-form__preview {
+  border-radius: 8px;
+  max-height: 240px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.post-form .button {
+  justify-self: start;
+}
+
+/* Post page */
+.back-link {
+  color: var(--text);
+  display: inline-block;
+  margin-top: 24px;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.post-detail {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 24px;
+}
+
+.post-detail__title {
+  font-size: 40px;
+  margin: 8px 0 16px;
+}
+
+.post-detail__content {
+  color: var(--text-h);
+  margin-bottom: 16px;
+  white-space: pre-wrap;
+}
+
+.post-detail__image {
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 16px;
+  max-height: 480px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.post-detail__actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.post-detail__owner-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.comments {
+  margin-top: 24px;
+}
+
+.comment-list {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  margin: 12px 0;
+  padding: 0;
+}
+
+.comment {
+  background: var(--code-bg);
+  border-radius: 8px;
+  display: grid;
+  gap: 4px;
+  padding: 10px 14px;
+}
+
+.comment p {
+  color: var(--text-h);
+  white-space: pre-wrap;
+}
+
+.comment-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}

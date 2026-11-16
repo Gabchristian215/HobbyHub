@@ -1,42 +1,17 @@
 import { Link, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/header.jsx";
+import CreatePost from "./pages/CreatePost.jsx";
+import EditPost from "./pages/EditPost.jsx";
+import Home from "./pages/Home.jsx";
+import PostDetail from "./pages/PostDetail.jsx";
 import "./App.css";
-
-function Home() {
-  return (
-    <>
-      <h1>Explore your hobbies</h1>
-      <p>Find inspiration and connect with people who share your interests.</p>
-    </>
-  );
-}
-
-function Create() {
-  return (
-    <>
-      <h1>Create</h1>
-      <p>Start a new hobby post.</p>
-      <Link to="/">Back Home</Link>
-    </>
-  );
-}
-
-function Post() {
-  return (
-    <>
-      <h1>Post</h1>
-      <p>Share what you have been working on with the HobbyHub community.</p>
-      <Link to="/">Back Home</Link>
-    </>
-  );
-}
 
 function NotFound() {
   return (
-    <>
-      <h1>Page not found</h1>
+    <section className="page page--narrow">
+      <h1 className="page__title">Page not found</h1>
       <Link to="/">Back Home</Link>
-    </>
+    </section>
   );
 }
 
@@ -47,8 +22,9 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/create" element={<Create />} />
-          <Route path="/post" element={<Post />} />
+          <Route path="/create" element={<CreatePost />} />
+          <Route path="/post/:id" element={<PostDetail />} />
+          <Route path="/post/:id/edit" element={<EditPost />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
