@@ -64,6 +64,7 @@ The following **additional** features are implemented:
 * [x] Search box in the header filters the feed as you type, and the search is kept in the URL (`/?q=...`) so it can be shared or bookmarked
 * [x] Relative timestamps ("2 hours ago") on posts and comments, with an "edited" marker on posts that were changed
 * [x] Delete asks for confirmation first
+* [x] Upvotes are counted in the database, so clicks made at the same moment are never lost
 
 ## Video Walkthrough
 
@@ -88,10 +89,11 @@ Describe any challenges encountered while building the app.
 2. Create a `.env` file with `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` from your Supabase project.
 3. `npm run dev`
 
-The app expects two Supabase tables:
+To set up a new Supabase project, run [`supabase/schema.sql`](supabase/schema.sql) in the SQL editor. It creates the `posts` and `comments` tables, the access policies, and the `increment_post_upvotes` function used by the upvote button.
 
-- `posts`: `id`, `title`, `content`, `image_url`, `upvotes` (integer, default 0), `author_id`, `created_at`, `updated_at`
-- `comments`: `id`, `post_id` (references `posts.id`, on delete cascade), `content`, `author_id`, `created_at`, `updated_at`
+### Deploying
+
+The app is deployed to Render as a static site using [`render.yaml`](render.yaml). Set `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` as environment variables on the Render service.
 
 ## License
 

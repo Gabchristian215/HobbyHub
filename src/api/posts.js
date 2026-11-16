@@ -91,8 +91,12 @@ export async function deletePost(postId) {
   throwDatabaseError("delete the post", error);
 }
 
+// Increments in the database so simultaneous clicks are never lost.
 export async function upvotePost(postId) {
-  const post = await getPostById(postId);
-  post.upvote();
-  return updatePost(postId, { upvotes: post.upvotes });
+  const { data, error } = await supabase
+    .rpc("increment_post_upvotes", { target_post_id: Number(postId) })
+    .single();
+
+  throwDatabaseError("upvote the post", error);
+  return Post.fromDatabase(data);
 }
